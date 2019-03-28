@@ -2,7 +2,12 @@ const RecommendedCarousel = require('../database/index');
 
 const controller = {
   get: (req, res) => {
-    res.status(200).send('you have connected to the get');
+    RecommendedCarousel.find({})
+      .limit(9)
+      .then(results => {
+        res.status(200).send(results);
+      })
+      .catch(err => console.error(err));
   }
 };
 

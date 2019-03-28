@@ -10,6 +10,12 @@ export default class App extends Component {
   // componentDidMount(){
   // }
 
+  getProperty() {
+    axios.get('api/recommendedCarousel').then(response => {
+      console.log(response);
+    });
+  }
+
   render() {
     return <div>hello from App Component</div>;
   }

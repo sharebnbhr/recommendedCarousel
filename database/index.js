@@ -4,7 +4,7 @@ mongoose.Promise = global.Promise;
 
 mongoose
   .connect('mongodb://localhost/recommendedCarousel', { useNewUrlParser: true })
-  .then(() => console.log('conneted to mongoDB'));
+  .then(() => console.log('connected to mongoDB'));
 
 const recommendedCarouselSchema = mongoose.Schema({
   imgUrl: String,
@@ -12,7 +12,7 @@ const recommendedCarouselSchema = mongoose.Schema({
   city: String,
   description: String,
   price: Number,
-  new: Boolean
+  reviewNum: Number
 });
 
 const RecommendedCarousel = mongoose.model(
